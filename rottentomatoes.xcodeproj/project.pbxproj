@@ -24,6 +24,9 @@
 		6D52796118D8CABA00FEF69F /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D52796018D8CABA00FEF69F /* Movie.m */; };
 		6D52796B18D8D35700FEF69F /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D52796918D8D35700FEF69F /* MovieCell.m */; };
 		6D52796C18D8D35700FEF69F /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D52796A18D8D35700FEF69F /* MovieCell.xib */; };
+		6D52797018D8F40D00FEF69F /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D52796E18D8F40D00FEF69F /* MovieViewController.m */; };
+		6D52797118D8F40D00FEF69F /* MovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D52796F18D8F40D00FEF69F /* MovieViewController.xib */; };
+		6D52797418D8F80500FEF69F /* Cast.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D52797318D8F80500FEF69F /* Cast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,11 @@
 		6D52796818D8D35700FEF69F /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
 		6D52796918D8D35700FEF69F /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
 		6D52796A18D8D35700FEF69F /* MovieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		6D52796D18D8F40D00FEF69F /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
+		6D52796E18D8F40D00FEF69F /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
+		6D52796F18D8F40D00FEF69F /* MovieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieViewController.xib; sourceTree = "<group>"; };
+		6D52797218D8F80500FEF69F /* Cast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cast.h; sourceTree = "<group>"; };
+		6D52797318D8F80500FEF69F /* Cast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cast.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +173,8 @@
 			children = (
 				6D52795F18D8CABA00FEF69F /* Movie.h */,
 				6D52796018D8CABA00FEF69F /* Movie.m */,
+				6D52797218D8F80500FEF69F /* Cast.h */,
+				6D52797318D8F80500FEF69F /* Cast.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -185,6 +195,9 @@
 				6D52796818D8D35700FEF69F /* MovieCell.h */,
 				6D52796918D8D35700FEF69F /* MovieCell.m */,
 				6D52796A18D8D35700FEF69F /* MovieCell.xib */,
+				6D52796D18D8F40D00FEF69F /* MovieViewController.h */,
+				6D52796E18D8F40D00FEF69F /* MovieViewController.m */,
+				6D52796F18D8F40D00FEF69F /* MovieViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -267,6 +280,7 @@
 				6D52793118D8BB4D00FEF69F /* InfoPlist.strings in Resources */,
 				6D52795E18D8BCDB00FEF69F /* MoviesViewController.xib in Resources */,
 				6D52796C18D8D35700FEF69F /* MovieCell.xib in Resources */,
+				6D52797118D8F40D00FEF69F /* MovieViewController.xib in Resources */,
 				6D52793918D8BB4D00FEF69F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,9 +301,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D52795D18D8BCDB00FEF69F /* MoviesViewController.m in Sources */,
+				6D52797018D8F40D00FEF69F /* MovieViewController.m in Sources */,
 				6D52796B18D8D35700FEF69F /* MovieCell.m in Sources */,
 				6D52793718D8BB4D00FEF69F /* AppDelegate.m in Sources */,
 				6D52796118D8CABA00FEF69F /* Movie.m in Sources */,
+				6D52797418D8F80500FEF69F /* Cast.m in Sources */,
 				6D52793318D8BB4D00FEF69F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +503,7 @@
 				6D52795118D8BB4D00FEF69F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6D52795218D8BB4D00FEF69F /* Build configuration list for PBXNativeTarget "rottentomatoesTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +512,7 @@
 				6D52795418D8BB4D00FEF69F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

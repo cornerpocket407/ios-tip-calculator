@@ -28,12 +28,12 @@
     // Configure the view for the selected state
 }
 
-#pragma mark - Public mehotds
+#pragma mark - Public methods
 - (void)setMovie:(Movie *)movie {
     _movie  = movie;
     self.movieTitleLabel.text = movie.title;
     self.synopsisLabel.text = movie.synopsis;
-
+    NSLog(@"Movie Cell: %@, %d", movie.title, movie.movieId);
     NSString *ImageURL = movie.thumbnailUrl;
     NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
     self.posterView.image = [UIImage imageWithData:imageData];

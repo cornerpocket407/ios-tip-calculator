@@ -37,7 +37,6 @@
                 <outlet property="movieTitleLabel" destination="cDV-Dc-IPA" id="IK3-Hi-cOF"/>
                 <outlet property="posterView" destination="nWT-Xj-d8w" id="sv0-bT-Sut"/>
                 <outlet property="synopsisLabel" destination="lPw-R3-mjO" id="UMQ-M5-Pra"/>
-                <outletCollection property="gestureRecognizers" destination="MQS-r1-xL9" appends="YES" id="mhx-9k-RJo"/>
             </connections>
         </tableViewCell>
     </objects>

@@ -7,6 +7,7 @@
 //
 
 #import "MoviesViewController.h"
+#import "MovieViewController.h"
 #import "Movie.h"
 #import "MovieCell.h"
 
@@ -60,7 +61,13 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Movie *movie = self.movies[indexPath.row];
-    NSLog(@"xxxxxxx%@", movie.title);
+    MovieViewController *mc = [MovieViewController alloc];
+        NSLog(@"---------movie is %@", movie.title);
+    mc.movie = movie;
+      NSLog(@"-----------mc.movie is %@", mc.movie.title);
+          NSLog(@"-----------mc.id is %d", mc.movie.movieId);
+    [mc init];
+    [self.navigationController pushViewController:mc animated:YES];
 }
 
 #pragma mark - Private methods

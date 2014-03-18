@@ -15,6 +15,7 @@
         self.title = dictionary[@"title"];
         self.synopsis = dictionary[@"synopsis"];
         self.thumbnailUrl = dictionary[@"posters"][@"thumbnail"];
+        self.movieId = dictionary[@"id"];
     }
     return self;
 }
