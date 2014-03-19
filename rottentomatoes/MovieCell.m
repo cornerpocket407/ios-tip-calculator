@@ -33,7 +33,6 @@
     _movie  = movie;
     self.movieTitleLabel.text = movie.title;
     self.synopsisLabel.text = movie.synopsis;
-    NSLog(@"Movie Cell: %@, %d", movie.title, movie.movieId);
     NSString *ImageURL = movie.thumbnailUrl;
     NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
     self.posterView.image = [UIImage imageWithData:imageData];

@@ -8,6 +8,7 @@
 
 #import "MovieViewController.h"
 #import "Movie.h"
+#import "AFHTTPRequestOperationManager.h"
 
 @interface MovieViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
@@ -22,16 +23,17 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        NSString *url = [NSString stringWithFormat:@"http://api.rottentomatoes.com/api/public/v1.0/movies/%d.json?apikey=g9au4hv6khv6wzvzgt55gpqs",_movie.movieId];
-        NSLog(@"********movie id:%d", _movie.movieId);
-        NSLog(@"********movie name:%@", _movie.title);
-        NSLog(@"********url:%@", url);
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-        [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-            id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                    NSLog(@"^^^^^^casts:%@", object);
+        NSString *url = [NSString stringWithFormat:@"http://api.rottentomatoes.com/api/public/v1.0/movies/%@/cast.json?apikey=g9au4hv6khv6wzvzgt55gpqs",_movie.movieId];
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"JSON: %@", responseObject);
+            self.synopsisLabel.text = _movie.synopsis;
+            NSString *ImageURL = _movie.originalImageUrl;
+            NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
+            self.movieImage.image = [UIImage imageWithData:imageData];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
         }];
-
     }
     return self;
 }

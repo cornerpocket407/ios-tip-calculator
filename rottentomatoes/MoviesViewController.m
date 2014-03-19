@@ -10,6 +10,7 @@
 #import "MovieViewController.h"
 #import "Movie.h"
 #import "MovieCell.h"
+#import "AFHTTPRequestOperationManager.h"
 
 @interface MoviesViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -65,7 +66,7 @@
         NSLog(@"---------movie is %@", movie.title);
     mc.movie = movie;
       NSLog(@"-----------mc.movie is %@", mc.movie.title);
-          NSLog(@"-----------mc.id is %d", mc.movie.movieId);
+          NSLog(@"-----------mc.id is %@", mc.movie.movieId);
     [mc init];
     [self.navigationController pushViewController:mc animated:YES];
 }
@@ -75,12 +76,13 @@
 - (void)reload {
     NSString *url = @"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=g9au4hv6khv6wzvzgt55gpqs";
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        self.movies = [Movie moviesWithArray:object[@"movies"]];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        self.movies = [Movie moviesWithArray:responseObject[@"movies"]];
         [self.tableView reloadData];
-//        NSLog(@"%@", object);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
     }];
 }
 

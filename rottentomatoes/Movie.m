@@ -12,10 +12,11 @@
 - (id) initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (self) {
-        self.title = dictionary[@"title"];
+        self.title = dictionary[@"title"];;
         self.synopsis = dictionary[@"synopsis"];
         self.thumbnailUrl = dictionary[@"posters"][@"thumbnail"];
         self.movieId = dictionary[@"id"];
+        self.originalImageUrl = dictionary[@"posters"][@"original"];
     }
     return self;
 }
@@ -27,5 +28,13 @@
         [movies addObject:movie];
     }
     return movies;
+}
++ (id) init:(NSDictionary *)dictionary {
+    Movie *movie = [[Movie alloc] init];
+    movie.title = dictionary[@"title"];
+    movie.synopsis = dictionary[@"synopsis"];
+    movie.thumbnailUrl = dictionary[@"posters"][@"thumbnail"];
+    movie.movieId = dictionary[@"id"];
+    return movie;
 }
 @end

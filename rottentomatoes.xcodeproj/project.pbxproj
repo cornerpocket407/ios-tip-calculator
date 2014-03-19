@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		209B462D270F45B286BBE529 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4AC63B65E294076836BBDE0 /* libPods.a */; };
 		6D52792718D8BB4D00FEF69F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D52792618D8BB4D00FEF69F /* Foundation.framework */; };
 		6D52792918D8BB4D00FEF69F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D52792818D8BB4D00FEF69F /* CoreGraphics.framework */; };
 		6D52792B18D8BB4D00FEF69F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D52792A18D8BB4D00FEF69F /* UIKit.framework */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		146630B5178A4B3993A58D13 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		6D52792318D8BB4D00FEF69F /* rottentomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rottentomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D52792618D8BB4D00FEF69F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6D52792818D8BB4D00FEF69F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,6 +71,7 @@
 		6D52796F18D8F40D00FEF69F /* MovieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieViewController.xib; sourceTree = "<group>"; };
 		6D52797218D8F80500FEF69F /* Cast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cast.h; sourceTree = "<group>"; };
 		6D52797318D8F80500FEF69F /* Cast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cast.m; sourceTree = "<group>"; };
+		A4AC63B65E294076836BBDE0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 				6D52792918D8BB4D00FEF69F /* CoreGraphics.framework in Frameworks */,
 				6D52792B18D8BB4D00FEF69F /* UIKit.framework in Frameworks */,
 				6D52792718D8BB4D00FEF69F /* Foundation.framework in Frameworks */,
+				209B462D270F45B286BBE529 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +106,7 @@
 				6D52794518D8BB4D00FEF69F /* rottentomatoesTests */,
 				6D52792518D8BB4D00FEF69F /* Frameworks */,
 				6D52792418D8BB4D00FEF69F /* Products */,
+				146630B5178A4B3993A58D13 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +126,7 @@
 				6D52792818D8BB4D00FEF69F /* CoreGraphics.framework */,
 				6D52792A18D8BB4D00FEF69F /* UIKit.framework */,
 				6D52793F18D8BB4D00FEF69F /* XCTest.framework */,
+				A4AC63B65E294076836BBDE0 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -182,6 +188,9 @@
 		6D52795618D8BB7100FEF69F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6D52796D18D8F40D00FEF69F /* MovieViewController.h */,
+				6D52796E18D8F40D00FEF69F /* MovieViewController.m */,
+				6D52796F18D8F40D00FEF69F /* MovieViewController.xib */,
 				6D52795A18D8BCDB00FEF69F /* MoviesViewController.h */,
 				6D52795B18D8BCDB00FEF69F /* MoviesViewController.m */,
 				6D52795C18D8BCDB00FEF69F /* MoviesViewController.xib */,
@@ -195,9 +204,6 @@
 				6D52796818D8D35700FEF69F /* MovieCell.h */,
 				6D52796918D8D35700FEF69F /* MovieCell.m */,
 				6D52796A18D8D35700FEF69F /* MovieCell.xib */,
-				6D52796D18D8F40D00FEF69F /* MovieViewController.h */,
-				6D52796E18D8F40D00FEF69F /* MovieViewController.m */,
-				6D52796F18D8F40D00FEF69F /* MovieViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -209,9 +215,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D52794F18D8BB4D00FEF69F /* Build configuration list for PBXNativeTarget "rottentomatoes" */;
 			buildPhases = (
+				E336BE91F0DD43BF8C4DFF65 /* Check Pods Manifest.lock */,
 				6D52791F18D8BB4D00FEF69F /* Sources */,
 				6D52792018D8BB4D00FEF69F /* Frameworks */,
 				6D52792118D8BB4D00FEF69F /* Resources */,
+				09DE719E5331406987E432EB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -294,6 +302,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09DE719E5331406987E432EB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E336BE91F0DD43BF8C4DFF65 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6D52791F18D8BB4D00FEF69F /* Sources */ = {
@@ -420,6 +461,7 @@
 		};
 		6D52795018D8BB4D00FEF69F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 146630B5178A4B3993A58D13 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -433,6 +475,7 @@
 		};
 		6D52795118D8BB4D00FEF69F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 146630B5178A4B3993A58D13 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
