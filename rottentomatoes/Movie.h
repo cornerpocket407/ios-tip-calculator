@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSString *cast;
 @property (nonatomic, strong) NSString *thumbnailUrl;
 @property (nonatomic, strong) NSString *originalImageUrl;
-@property (nonatomic, strong) NSArray *casts;
+@property (nonatomic, strong) NSMutableArray *casts;
 - (id) initWithDictionary:(NSDictionary *)dictionary;
 + (NSArray *)moviesWithArray:(NSArray *)array;
 + (id) init:(NSDictionary *)dictionary;

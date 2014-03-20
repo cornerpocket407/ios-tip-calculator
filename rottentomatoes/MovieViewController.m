@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *movieImage;
 @property (weak, nonatomic) IBOutlet UILabel *castLabel;
+@property (weak, nonatomic) IBOutlet UILabel *namesLabel;
 
 @end
 
@@ -27,10 +28,11 @@
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"JSON: %@", responseObject);
-            self.synopsisLabel.text = _movie.synopsis;
-            NSString *ImageURL = _movie.originalImageUrl;
-            NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
-            self.movieImage.image = [UIImage imageWithData:imageData];
+            _movie.casts = [[NSMutableArray alloc] init];
+            for (NSDictionary *dictionary in responseObject[@"cast"]) {
+                [_movie.casts addObject:dictionary[@"name"]];
+            }
+            [self reload];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", error);
         }];
@@ -41,7 +43,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self reload];
+}
+
+- (void)reload {
+    self.synopsisLabel.text = _movie.synopsis;
+    NSString *ImageURL = _movie.originalImageUrl;
+    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
+    self.movieImage.image = [UIImage imageWithData:imageData];
+    self.namesLabel.text = [_movie.casts componentsJoinedByString:@","];
 }
 
 - (void)didReceiveMemoryWarning

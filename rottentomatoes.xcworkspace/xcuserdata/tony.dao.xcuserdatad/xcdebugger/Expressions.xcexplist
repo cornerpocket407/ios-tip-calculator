@@ -3,6 +3,31 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[MovieViewController reload]:MovieViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_movie.casts">
+            </PersistentString>
+            <PersistentString
+               value = "self.namesLabel.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MovieViewController viewDidLoad]:MovieViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.namesLabel.text">
+            </PersistentString>
+            <PersistentString
+               value = "[_movie.casts componentsJoinedByString:@&quot;,&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__46-[MovieViewController initWithNibName:bundle:]_block_invoke:MovieViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[Movie initWithDictionary:]:Movie.m">
          <PersistentStrings>
             <PersistentString
@@ -15,6 +40,9 @@
                value = "dictionary[@&quot;id&quot;]">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MoviesViewController tableView:didSelectRowAtIndexPath:]:MoviesViewController.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

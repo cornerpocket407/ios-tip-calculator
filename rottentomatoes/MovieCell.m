@@ -35,7 +35,7 @@
     self.synopsisLabel.text = movie.synopsis;
     NSString *ImageURL = movie.thumbnailUrl;
     NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
-    self.posterView.image = [UIImage imageWithData:imageData];
+    self.posterView.image = [UIImage imageWithData:imageData scale:0.5];
 }
 
 @end

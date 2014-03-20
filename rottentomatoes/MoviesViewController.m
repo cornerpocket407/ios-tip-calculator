@@ -24,9 +24,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        NSLog(@"11111");
         [self reload];
-          NSLog(@"2222");
     }
     return self;
 }
@@ -58,6 +56,10 @@
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
     cell.movie = self.movies[indexPath.row];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
