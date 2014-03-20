@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MoviesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@class MBProgressHUD;
 
+@interface MoviesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+ MBProgressHUD *HUD;
+}
 @end

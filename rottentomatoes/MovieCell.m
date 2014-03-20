@@ -7,6 +7,7 @@
 //
 
 #import "MovieCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface MovieCell()
 @property (weak, nonatomic) IBOutlet UIImageView *posterView;
@@ -16,16 +17,11 @@
 
 @implementation MovieCell
 
-- (void)awakeFromNib
-{
-    // Initialization code
+- (void)awakeFromNib {
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 #pragma mark - Public methods
@@ -33,9 +29,7 @@
     _movie  = movie;
     self.movieTitleLabel.text = movie.title;
     self.synopsisLabel.text = movie.synopsis;
-    NSString *ImageURL = movie.thumbnailUrl;
-    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
-    self.posterView.image = [UIImage imageWithData:imageData scale:0.5];
+    [self.posterView setImageWithURL:[NSURL URLWithString:movie.thumbnailUrl]];
 }
 
 @end

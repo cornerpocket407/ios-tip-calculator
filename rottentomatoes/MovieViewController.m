@@ -9,6 +9,8 @@
 #import "MovieViewController.h"
 #import "Movie.h"
 #import "AFHTTPRequestOperationManager.h"
+#import "MBProgressHUD.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface MovieViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
@@ -27,14 +29,15 @@
         NSString *url = [NSString stringWithFormat:@"http://api.rottentomatoes.com/api/public/v1.0/movies/%@/cast.json?apikey=g9au4hv6khv6wzvzgt55gpqs",_movie.movieId];
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"JSON: %@", responseObject);
             _movie.casts = [[NSMutableArray alloc] init];
             for (NSDictionary *dictionary in responseObject[@"cast"]) {
                 [_movie.casts addObject:dictionary[@"name"]];
             }
             [self reload];
+            [HUD hide:YES];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", error);
+            [HUD hide:YES];
         }];
     }
     return self;
@@ -43,25 +46,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    [HUD show:YES];
     [self reload];
 }
 
 - (void)reload {
     self.synopsisLabel.text = _movie.synopsis;
-    NSString *ImageURL = _movie.originalImageUrl;
-    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
-    self.movieImage.image = [UIImage imageWithData:imageData];
-    self.namesLabel.text = [_movie.casts componentsJoinedByString:@","];
+    [self.movieImage setImageWithURL:[NSURL URLWithString:_movie.originalImageUrl]];
+    self.namesLabel.text = [_movie.casts componentsJoinedByString:@", "];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Public methods
-- (void)setMovie:(Movie *)movie {
-    _movie  = movie;
 }
 @end

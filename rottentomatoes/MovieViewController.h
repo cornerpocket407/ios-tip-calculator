@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Movie.h"
 
-@interface MovieViewController : UIViewController
+@class MBProgressHUD;
+
+@interface MovieViewController : UIViewController {
+ MBProgressHUD *HUD;
+}
 @property (strong, nonatomic) Movie *movie;
 @end

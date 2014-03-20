@@ -27,7 +27,6 @@
 		6D52796C18D8D35700FEF69F /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D52796A18D8D35700FEF69F /* MovieCell.xib */; };
 		6D52797018D8F40D00FEF69F /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D52796E18D8F40D00FEF69F /* MovieViewController.m */; };
 		6D52797118D8F40D00FEF69F /* MovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D52796F18D8F40D00FEF69F /* MovieViewController.xib */; };
-		6D52797418D8F80500FEF69F /* Cast.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D52797318D8F80500FEF69F /* Cast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,8 +68,6 @@
 		6D52796D18D8F40D00FEF69F /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
 		6D52796E18D8F40D00FEF69F /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 		6D52796F18D8F40D00FEF69F /* MovieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieViewController.xib; sourceTree = "<group>"; };
-		6D52797218D8F80500FEF69F /* Cast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cast.h; sourceTree = "<group>"; };
-		6D52797318D8F80500FEF69F /* Cast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cast.m; sourceTree = "<group>"; };
 		A4AC63B65E294076836BBDE0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -179,8 +176,6 @@
 			children = (
 				6D52795F18D8CABA00FEF69F /* Movie.h */,
 				6D52796018D8CABA00FEF69F /* Movie.m */,
-				6D52797218D8F80500FEF69F /* Cast.h */,
-				6D52797318D8F80500FEF69F /* Cast.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -346,7 +341,6 @@
 				6D52796B18D8D35700FEF69F /* MovieCell.m in Sources */,
 				6D52793718D8BB4D00FEF69F /* AppDelegate.m in Sources */,
 				6D52796118D8CABA00FEF69F /* Movie.m in Sources */,
-				6D52797418D8F80500FEF69F /* Cast.m in Sources */,
 				6D52793318D8BB4D00FEF69F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

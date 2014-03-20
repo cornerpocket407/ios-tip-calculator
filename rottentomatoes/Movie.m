@@ -22,7 +22,6 @@
 }
 + (NSArray *)moviesWithArray:(NSArray *)array {
     NSMutableArray *movies = [[NSMutableArray alloc] init];
-    
     for (NSDictionary *dictionary in array) {
         Movie *movie = [[Movie alloc] initWithDictionary:dictionary];
         [movies addObject:movie];
